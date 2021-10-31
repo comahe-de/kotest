@@ -348,6 +348,111 @@ Some elements were missing: [
             val expected: List<String>? = listOf("A", "B", "C")
             actual.shouldContainExactlyInAnyOrder(expected)
          }
+
+         "test that byte arrays works" {
+            val actual = byteArrayOf(1, 2, 3)
+            actual.shouldContainExactlyInAnyOrder(3, 1, 2)
+            actual shouldContainExactlyInAnyOrder byteArrayOf(3, 1, 2)
+            actual.shouldNotContainExactlyInAnyOrder(3, 1, 2, 1)
+            actual shouldNotContainExactlyInAnyOrder byteArrayOf(3, 1, 2, 1)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactlyInAnyOrder(3, 1, 2, 1) }
+            shouldThrow<AssertionError> { actual shouldContainExactlyInAnyOrder byteArrayOf(3, 1, 2, 1) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactlyInAnyOrder(3, 1, 2) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactlyInAnyOrder byteArrayOf(3, 1, 2) }
+         }
+
+         "test that char arrays works" {
+            val actual = charArrayOf('a', 'b', 'c')
+            actual.shouldContainExactlyInAnyOrder('c', 'a', 'b')
+            actual shouldContainExactlyInAnyOrder charArrayOf('c', 'a', 'b')
+            actual.shouldNotContainExactlyInAnyOrder('c', 'a', 'b', 'a')
+            actual shouldNotContainExactlyInAnyOrder charArrayOf('c', 'a', 'b', 'a')
+
+            shouldThrow<AssertionError> { actual.shouldContainExactlyInAnyOrder('c', 'a', 'b', 'a') }
+            shouldThrow<AssertionError> { actual shouldContainExactlyInAnyOrder charArrayOf('c', 'a', 'b', 'a') }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactlyInAnyOrder('c', 'a', 'b') }
+            shouldThrow<AssertionError> { actual shouldNotContainExactlyInAnyOrder charArrayOf('c', 'a', 'b') }
+         }
+
+         "test that short arrays works" {
+            val actual = shortArrayOf(1, 2, 3)
+            actual.shouldContainExactlyInAnyOrder(3, 1, 2)
+            actual shouldContainExactlyInAnyOrder shortArrayOf(3, 1, 2)
+            actual.shouldNotContainExactlyInAnyOrder(3, 1, 2, 1)
+            actual shouldNotContainExactlyInAnyOrder shortArrayOf(3, 1, 2, 1)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactlyInAnyOrder(3, 1, 2, 1) }
+            shouldThrow<AssertionError> { actual shouldContainExactlyInAnyOrder shortArrayOf(3, 1, 2, 1) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactlyInAnyOrder(3, 1, 2) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactlyInAnyOrder shortArrayOf(3, 1, 2) }
+         }
+
+         "test that int arrays works" {
+            val actual = intArrayOf(1, 2, 3)
+            actual.shouldContainExactlyInAnyOrder(3, 1, 2)
+            actual shouldContainExactlyInAnyOrder intArrayOf(3, 1, 2)
+            actual.shouldNotContainExactlyInAnyOrder(3, 1, 2, 1)
+            actual shouldNotContainExactlyInAnyOrder intArrayOf(3, 1, 2, 1)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactlyInAnyOrder(3, 1, 2, 1) }
+            shouldThrow<AssertionError> { actual shouldContainExactlyInAnyOrder intArrayOf(3, 1, 2, 1) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactlyInAnyOrder(3, 1, 2) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactlyInAnyOrder intArrayOf(3, 1, 2) }
+         }
+
+         "test that long arrays works" {
+            val actual = longArrayOf(1, 2, 3)
+            actual.shouldContainExactlyInAnyOrder(3, 1, 2)
+            actual shouldContainExactlyInAnyOrder longArrayOf(3, 1, 2)
+            actual.shouldNotContainExactlyInAnyOrder(3, 1, 2, 1)
+            actual shouldNotContainExactlyInAnyOrder longArrayOf(3, 1, 2, 1)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactlyInAnyOrder(3, 1, 2, 1) }
+            shouldThrow<AssertionError> { actual shouldContainExactlyInAnyOrder longArrayOf(3, 1, 2, 1) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactlyInAnyOrder(3, 1, 2) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactlyInAnyOrder longArrayOf(3, 1, 2) }
+         }
+
+         "test that float arrays works" {
+            val actual = floatArrayOf(1.0f, 2.0f, 3.0f)
+            actual.shouldContainExactlyInAnyOrder(3.0f, 1.0f, 2.0f)
+            actual shouldContainExactlyInAnyOrder floatArrayOf(3.0f, 1.0f, 2.0f)
+            actual.shouldNotContainExactlyInAnyOrder(3.0f, 1.0f, 2.0f, 1.0f)
+            actual shouldNotContainExactlyInAnyOrder floatArrayOf(3.0f, 1.0f, 2.0f, 1.0f)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactlyInAnyOrder(3.0f, 1.0f, 2.0f, 1.0f) }
+            shouldThrow<AssertionError> { actual shouldContainExactlyInAnyOrder floatArrayOf(3.0f, 1.0f, 2.0f, 1.0f) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactlyInAnyOrder(3.0f, 1.0f, 2.0f) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactlyInAnyOrder floatArrayOf(3.0f, 1.0f, 2.0f) }
+         }
+         "test that double arrays works" {
+            val actual = doubleArrayOf(1.0, 2.0, 3.0)
+            actual.shouldContainExactlyInAnyOrder(3.0, 1.0, 2.0)
+            actual shouldContainExactlyInAnyOrder doubleArrayOf(3.0, 1.0, 2.0)
+            actual.shouldNotContainExactlyInAnyOrder(3.0, 1.0, 2.0, 1.0)
+            actual shouldNotContainExactlyInAnyOrder doubleArrayOf(3.0, 1.0, 2.0, 1.0)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactlyInAnyOrder(3.0, 1.0, 2.0, 1.0) }
+            shouldThrow<AssertionError> { actual shouldContainExactlyInAnyOrder doubleArrayOf(3.0, 1.0, 2.0, 1.0) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactlyInAnyOrder(3.0, 1.0, 2.0) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactlyInAnyOrder doubleArrayOf(3.0, 1.0, 2.0) }
+         }
+
+         "test that long arrays works" {
+            val actual = booleanArrayOf(true, true, false)
+            actual.shouldContainExactlyInAnyOrder(false, true, true)
+            actual shouldContainExactlyInAnyOrder booleanArrayOf(false, true, true)
+            actual.shouldNotContainExactlyInAnyOrder(false, true, true, true)
+            actual shouldNotContainExactlyInAnyOrder booleanArrayOf(false, true, true, true)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactlyInAnyOrder(false, true, true, true) }
+            shouldThrow<AssertionError> {
+               actual shouldContainExactlyInAnyOrder booleanArrayOf(false, true, true, true)
+            }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactlyInAnyOrder(false, true, true) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactlyInAnyOrder booleanArrayOf(false, true, true) }
+         }
       }
    }
 }
