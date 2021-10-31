@@ -88,6 +88,63 @@ fun <T, C : Collection<T>> C?.shouldContainExactlyInAnyOrder(vararg expected: T)
 fun <T> containExactlyInAnyOrder(vararg expected: T): Matcher<Collection<T>?> =
    containExactlyInAnyOrder(expected.asList())
 
+
+fun ByteArray?.containExactlyInAnyOrder(vararg expected: Byte) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+@JvmName("containExactlyInAnyOrder_array")
+infix fun ByteArray?.containExactlyInAnyOrder(expected: ByteArray) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+fun CharArray?.containExactlyInAnyOrder(vararg expected: Char) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+@JvmName("containExactlyInAnyOrder_array")
+infix fun CharArray?.containExactlyInAnyOrder(expected: CharArray) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+fun ShortArray?.containExactlyInAnyOrder(vararg expected: Short) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+@JvmName("containExactlyInAnyOrder_array")
+infix fun ShortArray?.containExactlyInAnyOrder(expected: ShortArray) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+fun IntArray?.containExactlyInAnyOrder(vararg expected: Int) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+@JvmName("containExactlyInAnyOrder_array")
+infix fun IntArray?.containExactlyInAnyOrder(expected: IntArray) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+fun LongArray?.containExactlyInAnyOrder(vararg expected: Long) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+@JvmName("containExactlyInAnyOrder_array")
+infix fun LongArray?.containExactlyInAnyOrder(expected: LongArray) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+fun FloatArray?.containExactlyInAnyOrder(vararg expected: Float) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+@JvmName("containExactlyInAnyOrderA")
+infix fun FloatArray?.containExactlyInAnyOrder(expected: FloatArray) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+fun DoubleArray?.containExactlyInAnyOrder(vararg expected: Double) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+@JvmName("containExactlyInAnyOrderA")
+infix fun DoubleArray?.containExactlyInAnyOrder(expected: DoubleArray) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+fun BooleanArray?.containExactlyInAnyOrder(vararg expected: Boolean) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
+@JvmName("containExactlyInAnyOrder_array")
+infix fun BooleanArray?.containExactlyInAnyOrder(expected: BooleanArray) =
+    this?.asList() should containExactlyInAnyOrder(expected.asList())
+
 infix fun <T> Array<T>.shouldNotContainExactlyInAnyOrder(expected: Array<T>): Array<T> {
    asList().shouldNotContainExactlyInAnyOrder(expected.asList())
    return this

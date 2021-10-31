@@ -34,6 +34,62 @@ fun <T> Iterable<T>?.shouldContainExactly(vararg expected: T) =
 fun <T> Array<T>?.shouldContainExactly(vararg expected: T) =
    this?.asList() should containExactly(*expected)
 
+fun ByteArray?.shouldContainExactly(vararg expected: Byte) =
+   this?.asList() should containExactly(expected.asList())
+
+@JvmName("shouldContainExactly_array")
+infix fun ByteArray?.shouldContainExactly(expected: ByteArray) =
+   this?.asList() should containExactly(expected.asList())
+
+fun CharArray?.shouldContainExactly(vararg expected: Char) =
+   this?.asList() should containExactly(expected.asList())
+
+@JvmName("shouldContainExactly_array")
+infix fun CharArray?.shouldContainExactly(expected: CharArray) =
+   this?.asList() should containExactly(expected.asList())
+
+fun ShortArray?.shouldContainExactly(vararg expected: Short) =
+   this?.asList() should containExactly(expected.asList())
+
+@JvmName("shouldContainExactly_array")
+infix fun ShortArray?.shouldContainExactly(expected: ShortArray) =
+   this?.asList() should containExactly(expected.asList())
+
+fun IntArray?.shouldContainExactly(vararg expected: Int) =
+   this?.asList() should containExactly(expected.asList())
+
+@JvmName("shouldContainExactly_array")
+infix fun IntArray?.shouldContainExactly(expected: IntArray) =
+   this?.asList() should containExactly(expected.asList())
+
+fun LongArray?.shouldContainExactly(vararg expected: Long) =
+   this?.asList() should containExactly(expected.asList())
+
+@JvmName("shouldContainExactly_array")
+infix fun LongArray?.shouldContainExactly(expected: LongArray) =
+   this?.asList() should containExactly(expected.asList())
+
+fun FloatArray?.shouldContainExactly(vararg expected: Float) =
+   this?.asList() should containExactly(expected.asList())
+
+@JvmName("shouldContainExactlyA")
+infix fun FloatArray?.shouldContainExactly(expected: FloatArray) =
+   this?.asList() should containExactly(expected.asList())
+
+fun DoubleArray?.shouldContainExactly(vararg expected: Double) =
+   this?.asList() should containExactly(expected.asList())
+
+@JvmName("shouldContainExactlyA")
+infix fun DoubleArray?.shouldContainExactly(expected: DoubleArray) =
+   this?.asList() should containExactly(expected.asList())
+
+fun BooleanArray?.shouldContainExactly(vararg expected: Boolean) =
+   this?.asList() should containExactly(expected.asList())
+
+@JvmName("shouldContainExactly_array")
+infix fun BooleanArray?.shouldContainExactly(expected: BooleanArray) =
+   this?.asList() should containExactly(expected.asList())
+
 infix fun <T, C : Collection<T>> C?.shouldContainExactly(expected: C) = this should containExactly(expected)
 fun <T> Collection<T>?.shouldContainExactly(vararg expected: T) = this should containExactly(*expected)
 
@@ -93,6 +149,62 @@ infix fun <T> Array<T>?.shouldNotContainExactly(expected: Array<T>) = this?.asLi
 
 fun <T> Iterable<T>?.shouldNotContainExactly(vararg expected: T) = this?.toList() shouldNot containExactly(*expected)
 fun <T> Array<T>?.shouldNotContainExactly(vararg expected: T) = this?.asList() shouldNot containExactly(*expected)
+
+fun ByteArray?.shouldNotContainExactly(vararg expected: Byte) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+@JvmName("shouldNotContainExactly_array")
+infix fun ByteArray?.shouldNotContainExactly(expected: ByteArray) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+fun CharArray?.shouldNotContainExactly(vararg expected: Char) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+@JvmName("shouldNotContainExactly_array")
+infix fun CharArray?.shouldNotContainExactly(expected: CharArray) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+fun ShortArray?.shouldNotContainExactly(vararg expected: Short) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+@JvmName("shouldNotContainExactly_array")
+infix fun ShortArray?.shouldNotContainExactly(expected: ShortArray) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+fun IntArray?.shouldNotContainExactly(vararg expected: Int) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+@JvmName("shouldNotContainExactly_array")
+infix fun IntArray?.shouldNotContainExactly(expected: IntArray) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+fun LongArray?.shouldNotContainExactly(vararg expected: Long) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+@JvmName("shouldNotContainExactly_array")
+infix fun LongArray?.shouldNotContainExactly(expected: LongArray) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+fun FloatArray?.shouldNotContainExactly(vararg expected: Float) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+@JvmName("shouldNotContainExactlyA")
+infix fun FloatArray?.shouldNotContainExactly(expected: FloatArray) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+fun DoubleArray?.shouldNotContainExactly(vararg expected: Double) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+@JvmName("shouldNotContainExactlyA")
+infix fun DoubleArray?.shouldNotContainExactly(expected: DoubleArray) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+fun BooleanArray?.shouldNotContainExactly(vararg expected: Boolean) =
+    this?.asList() shouldNot containExactly(expected.asList())
+
+@JvmName("shouldNotContainExactly_array")
+infix fun BooleanArray?.shouldNotContainExactly(expected: BooleanArray) =
+    this?.asList() shouldNot containExactly(expected.asList())
 
 infix fun <T, C : Collection<T>> C?.shouldNotContainExactly(expected: C) = this shouldNot containExactly(expected)
 fun <T> Collection<T>?.shouldNotContainExactly(vararg expected: T) = this shouldNot containExactly(*expected)

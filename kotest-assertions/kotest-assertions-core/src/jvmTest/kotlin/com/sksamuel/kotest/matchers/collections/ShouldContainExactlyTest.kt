@@ -190,6 +190,111 @@ Some elements were missing: [
   Blonde(a=hoo, b=true, c=96915, p=a${sep}b${sep}c)
 ]expected:<[Blonde(a=woo, b=true, c=97821, p=a/b/c), Blonde(a=goo, b=true, c=51984, p=a/b/c)]> but was:<[Blonde(a=foo, b=true, c=23423, p=a/b/c), Blonde(a=hoo, b=true, c=96915, p=a/b/c)]>"""
          }
+
+
+         "test that byte arrays works" {
+            val actual = byteArrayOf(1, 2, 3)
+            actual.shouldContainExactly(1, 2, 3)
+            actual shouldContainExactly byteArrayOf(1, 2, 3)
+            actual.shouldNotContainExactly(3, 2, 1)
+            actual shouldNotContainExactly byteArrayOf(3, 2, 1)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactly(3, 2, 1) }
+            shouldThrow<AssertionError> { actual shouldContainExactly byteArrayOf(3, 2, 1) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactly(1, 2, 3) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactly byteArrayOf(1, 2, 3) }
+         }
+
+         "test that char arrays works" {
+            val actual = charArrayOf('a', 'b', 'c')
+            actual.shouldContainExactly('a', 'b', 'c')
+            actual shouldContainExactly charArrayOf('a', 'b', 'c')
+            actual.shouldNotContainExactly('c', 'b', 'a')
+            actual shouldNotContainExactly charArrayOf('c', 'b', 'a')
+
+            shouldThrow<AssertionError> { actual.shouldContainExactly('c', 'b', 'a') }
+            shouldThrow<AssertionError> { actual shouldContainExactly charArrayOf('c', 'b', 'a') }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactly('a', 'b', 'c') }
+            shouldThrow<AssertionError> { actual shouldNotContainExactly charArrayOf('a', 'b', 'c') }
+         }
+
+         "test that short arrays works" {
+            val actual = shortArrayOf(1, 2, 3)
+            actual.shouldContainExactly(1, 2, 3)
+            actual shouldContainExactly shortArrayOf(1, 2, 3)
+            actual.shouldNotContainExactly(3, 2, 1)
+            actual shouldNotContainExactly shortArrayOf(3, 2, 1)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactly(3, 2, 1) }
+            shouldThrow<AssertionError> { actual shouldContainExactly shortArrayOf(3, 2, 1) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactly(1, 2, 3) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactly shortArrayOf(1, 2, 3) }
+         }
+
+         "test that int arrays works" {
+            val actual = intArrayOf(1, 2, 3)
+            actual.shouldContainExactly(1, 2, 3)
+            actual shouldContainExactly intArrayOf(1, 2, 3)
+            actual.shouldNotContainExactly(3, 2, 1)
+            actual shouldNotContainExactly intArrayOf(3, 2, 1)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactly(3, 2, 1) }
+            shouldThrow<AssertionError> { actual shouldContainExactly intArrayOf(3, 2, 1) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactly(1, 2, 3) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactly intArrayOf(1, 2, 3) }
+         }
+
+         "test that long arrays works" {
+            val actual = longArrayOf(1, 2, 3)
+            actual.shouldContainExactly(1, 2, 3)
+            actual shouldContainExactly longArrayOf(1, 2, 3)
+            actual.shouldNotContainExactly(3, 2, 1)
+            actual shouldNotContainExactly longArrayOf(3, 2, 1)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactly(3, 2, 1) }
+            shouldThrow<AssertionError> { actual shouldContainExactly longArrayOf(3, 2, 1) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactly(1, 2, 3) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactly longArrayOf(1, 2, 3) }
+         }
+
+         "test that float arrays works" {
+            val actual = floatArrayOf(1.0f, 2.0f, 3.0f)
+            actual.shouldContainExactly(1.0f, 2.0f, 3.0f)
+            actual shouldContainExactly floatArrayOf(1.0f, 2.0f, 3.0f)
+            actual.shouldNotContainExactly(3.0f, 2.0f, 1.0f)
+            actual shouldNotContainExactly floatArrayOf(3.0f, 2.0f, 1.0f)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactly(3.0f, 2.0f, 1.0f) }
+            shouldThrow<AssertionError> { actual shouldContainExactly floatArrayOf(3.0f, 2.0f, 1.0f) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactly(1.0f, 2.0f, 3.0f) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactly floatArrayOf(1.0f, 2.0f, 3.0f) }
+         }
+
+         "test that double arrays works" {
+            val actual = doubleArrayOf(1.0, 2.0, 3.0)
+            actual.shouldContainExactly(1.0, 2.0, 3.0)
+            actual shouldContainExactly doubleArrayOf(1.0, 2.0, 3.0)
+            actual.shouldNotContainExactly(3.0, 2.0, 1.0)
+            actual shouldNotContainExactly doubleArrayOf(3.0, 2.0, 1.0)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactly(3.0, 2.0, 1.0) }
+            shouldThrow<AssertionError> { actual shouldContainExactly doubleArrayOf(3.0, 2.0, 1.0) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactly(1.0, 2.0, 3.0) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactly doubleArrayOf(1.0, 2.0, 3.0) }
+         }
+
+         "test that boolean arrays works" {
+            val actual = booleanArrayOf(true, false, true)
+            actual.shouldContainExactly(true, false, true)
+            actual shouldContainExactly booleanArrayOf(true, false, true)
+            actual.shouldNotContainExactly(true, false, false)
+            actual shouldNotContainExactly booleanArrayOf(true, false, false)
+
+            shouldThrow<AssertionError> { actual.shouldContainExactly(true, false, false) }
+            shouldThrow<AssertionError> { actual shouldContainExactly booleanArrayOf(true, false, false) }
+            shouldThrow<AssertionError> { actual.shouldNotContainExactly(true, false, true) }
+            shouldThrow<AssertionError> { actual shouldNotContainExactly booleanArrayOf(true, false, true) }
+         }
       }
 
       "containExactlyInAnyOrder" should {
