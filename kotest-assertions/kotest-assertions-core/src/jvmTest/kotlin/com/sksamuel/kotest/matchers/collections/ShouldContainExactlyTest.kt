@@ -439,7 +439,7 @@ Some elements were missing: [
             shouldThrow<AssertionError> { actual shouldNotContainExactlyInAnyOrder doubleArrayOf(3.0, 1.0, 2.0) }
          }
 
-         "test that long arrays works" {
+         "test that boolean arrays works" {
             val actual = booleanArrayOf(true, true, false)
             actual.shouldContainExactlyInAnyOrder(false, true, true)
             actual shouldContainExactlyInAnyOrder booleanArrayOf(false, true, true)
